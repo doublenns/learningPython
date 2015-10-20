@@ -11,6 +11,10 @@ for character in message:
 
 print(count)
 
-# Program loops over each char in message's string, counting how often each char
-# appears. The setdefault() method call ensures that the key is in the count
-# dictionary, w/ the default value of 0.
+'''
+Program loops over each char in message's string, counting how often each char
+appears. The setdefault() method call ensures that the key is in the count
+dictionary, w/ the default value of 0.
+Done so that the program doesn't throw a KeyError error when
+count[character] += 1 is executed.
+'''
