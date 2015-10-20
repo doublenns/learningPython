@@ -11,4 +11,19 @@ def printBoard(board):
     print('-+-+-')
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 
+turn = 'X'
+
+for i in range(9):
+    printBoard(theBoard)
+    print('Turn for ' + turn + '. Move on which space?')
+    move = input()
+    theBoard[move] = turn
+    if turn == 'X':
+        turn = '0'
+    else:
+        turn = 'X'
+
 printBoard(theBoard)
+
+# Is there an immutable version of a dictionary?
+# If user tries to move to space already taken, could use try/except error handling.
