@@ -2,14 +2,14 @@
 #
 '''
 Simple program to convert a user-inputted temperature
-from Celcius to Fahrenheit
+from Fahrenheit to Celsius
 '''
 
-# Note: This makes the print fucntion work the same
+# Note: This makes the print function work the same
 # in both Python 2 and Python 3
 from __future__ import print_function
 
-# Put there to help convert to zero, but not implemented yet
+# Put there to help round decimals, but not implemented yet
 import math
 
 # Note: This makes the input fucntion work the same
@@ -22,19 +22,21 @@ except NameError:
 import datetime
 
 temperature_ranges = {
-    "January":    (-5, 5),
-    "February":   (-5, 5),
-    "March":      (-5, 5),
-    "April":      (-5, 5),
-    "May":        (-5, 5),
-    "June":       (-5, 5),
-    "July":       (-5, 5),
-    "August":     (-5, 5),
-    "September":  (-5, 5),
-    "October":    (-5, 5),
-    "November":   (-5, 15),
-    "December":   (-5, 5)
+    "January":    (-2, 6),
+    "February":   (-1, 8),
+    "March":      (3, 13),
+    "April":      (8, 9),
+    "May":        (14, 24),
+    "June":       (19, 29),
+    "July":       (22, 31),
+    "August":     (21, 30),
+    "September":  (17, 26),
+    "October":    (10, 20),
+    "November":   (5, 14),
+    "December":   (0, 8)
 }
+# Ranges taken from online graph included on:
+# currentresults.com/Weather/US/washington-dc-temperatures-by-month-average.php
 
 
 # def round()
