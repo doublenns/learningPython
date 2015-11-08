@@ -6,17 +6,18 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 multiples of 3 or 5 below 1000.
 '''
 
+### Solution 1 ####
 # Solution simply brute force iterates thru every single int. If the iteration 
 # is either a multiple of 3 of 5, it adds them to the running tally & prints 
 # the sum when iteration is complete.
 
-sum =0
+valueSum = 0
 
 for i in range(1000):
     if not (i % 3) or not (i % 5):
-        sum += i
+        valueSum += i
 
-print('The sum of all multiple of 3 or 5 below 1000 is:', sum)
+print('The sum of all multiple of 3 or 5 below 1000 is:', valueSum)
 
 
 '''
@@ -29,3 +30,16 @@ Potential optimizations:
             ~ Would have to discard sums of items that multiple of both 3 and 5
     * Math based operation to add factors more efficiently.
 '''
+
+
+### Solution 2 ####
+# Another shorter solution which iterates less and avoids using a
+# for loop. 
+
+# The values var stores the union of the two sets of 3 and 5 factors from 0-999.
+# The result is stored as a list, which is then passed to the sum function, which
+# adds all the items in the list together and returns the result.
+
+values = set(range(3,1000,3)) | set(range(5,1000,5))
+print('The sum of all multiple of 3 or 5 below 1000 is:', sum(values))
+# Changed the sum variable in the 1st solution so wouldn't shadow the sum function.
