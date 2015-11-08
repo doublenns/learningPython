@@ -17,3 +17,15 @@ for i in range(1000):
         sum += i
 
 print('The sum of all multiple of 3 or 5 below 1000 is:', sum)
+
+
+'''
+Potential optimizations:
+    * Already know the sum of all numbers below 10 is 23. Can use range(10, 1000)
+        and start the sum at 23 instead of 0.
+    * Iterate less. (990 / 3) = 330. (990 / 5) = 198. (330 + 198) = 528.
+        Only iterating thru multiple of 3 and 5 could cut down iterations by almost
+        half.
+            ~ Would have to discard sums of items that multiple of both 3 and 5
+    * Math based operation to add factors more efficiently.
+'''
