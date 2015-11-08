@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#
+
 '''
 Simple program to convert a user-inputted temperature
 from Fahrenheit to Celsius
