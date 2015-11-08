@@ -46,17 +46,30 @@ def round_to_1(x):
     return round(x, -int(math.floor(math.log10(abs(x)))))
 
 
-# Input validation to ensure user uses only number charse
+# Input validation to ensure user uses only number chars:
 while True:
     input_temp = input("What is the temperature in Fahrenheit? ")
-    if input_temp.isdecimal():
-        print(); break # Print an empty line and then break out of loop
-    else:
-        print("Please enter the temperature in numeric characters only.\n")
+    try:
+       val = float(input_temp)
+       print(); break
+    except ValueError:
+       print("*Please enter the temperature in numeric characters only.\n")
+
+# Old Method: doesn't work on negatives or decimals since '-' and '.' aren't digits
+# Note: could also use 'isdigits' instead of 'isdecimal' (I believe)
+#while True:
+#    input_temp = input("What is the temperature in Fahrenheit? ")
+#    if input_temp.isdecimal():
+#        print(); break # Print an empty line and then break out of loop
+#    else:
+#        print("Please enter the temperature in numeric characters only.\n")
 
 
-fahrenheit = int(input_temp)
-celsius = ((fahrenheit - 32) / 1.8)
+
+
+
+fahrenheit = input_temp
+celsius = ((float(fahrenheit) - 32) / 1.8)
 
 # Use format to round Celsius to 2 decimal places and print the degree sign.
 output_template =  "Fahrenheit: {FH}{DS} * is equal to * Celsius: {CL:.2f}{DS}"
