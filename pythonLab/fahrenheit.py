@@ -5,12 +5,10 @@ Simple program to convert a user-inputted temperature
 from Fahrenheit to Celsius
 '''
 
+
 # Note: This makes the print function work the same
 # in both Python 2 and Python 3
 from __future__ import print_function
-
-# Put there to help round decimals, but not implemented yet
-import math
 
 # Note: This makes the input fucntion work the same
 # in both Python 2 and Python 3
@@ -19,8 +17,14 @@ try:
 except NameError:
     pass
 
-import datetime
 
+import datetime, calendar
+# math imported here to help round decimals, but not implemented yet
+import math
+
+
+# Ranges taken from online graph included on:
+# currentresults.com/Weather/US/washington-dc-temperatures-by-month-average.php
 temperature_ranges = {
     "January":    (-2, 6),
     "February":   (-1, 8),
@@ -35,39 +39,64 @@ temperature_ranges = {
     "November":   (5, 14),
     "December":   (0, 8)
 }
-# Ranges taken from online graph included on:
-# currentresults.com/Weather/US/washington-dc-temperatures-by-month-average.php
 
 
-# def round()
+# Function that rounds only to most significant digit. Wasn't useful in this program.
+def round_to_1(x):
+    return round(x, -int(math.floor(math.log10(abs(x)))))
 
-# User input wrapped in input validation
+
+# Input validation to ensure user uses only number charse
 while True:
     input_temp = input("What is the temperature in Fahrenheit? ")
     if input_temp.isdecimal():
-       break
+        print(); break # Print an empty line and then break out of loop
     else:
         print("Please enter the temperature in numeric characters only.\n")
 
+
 fahrenheit = int(input_temp)
 celsius = ((fahrenheit - 32) / 1.8)
+
+# Use format to round Celsius to 2 decimal places and print the degree sign.
+output_template =  "Fahrenheit: {FH}{DS} * is equal to * Celsius: {CL:.2f}{DS}"
+output = output_template.format(FH=fahrenheit, CL=celsius, DS=u'\N{DEGREE SIGN}')
+# Can only put a placeholder inside of a string; is a placeholder for a variable
+print(output,'\n')
+
+# Using round function to round Celsius to 2 deciml places
+# print("\nCelcius:", round(celsius, 2), "* is equal to *" , "Fahrenheit:", fahrenheit )
+
+
+# A way of parsing the numeric month from datetime.now, which could be useful
+# when not dsplaying the result to the user.
+# currentmonth = datetime.datetime.now().month
 # Can also use .tcnow to give GMT time so consistenet across systems and
 # not affected by daylight savings time
-currentmonth = datetime.datetime.now().month
-print(currentmonth)
+
 now = datetime.datetime.now()
-print('Python thinks the current month abbreviation is:', now.strftime("%b"))
-print('Python thinks the current month name is:', now.strftime("%b"))
+# Below are 3 different ways of returning the Month Name from datetime output
+month_name = calendar.month_name[now.month]
+# print('The abbreviation of the current month is:', now.strftime("%b"))
+# print('The current month name is:', now.strftime("%B"))
+print('The current month is:', month_name)
+
+month_temp_range = temperature_ranges[month_name]
+low, high = month_temp_range
 
 
-output_template =  "Celsius: {CL:.2f} * is equal to * Fahrenheit: {FH:.2f}"
-output = output_template.format(FH=fahrenheit, CL=celsius)
-# Can only put a placeholder inside of a string. Is a placeholder for a variable
+if low <= celsius <= high:
+    print("This is a normal temp for this time of year")
+elif celsius < low:
+    print("It is unseasonably cold!")
+elif celsius > high:
+    print("It is rather warm!")
+else:
+    print("I'm mathematically impossible!")
 
-print(output)
 
-print("\nCelcius:", round(celsius, 2), "* is equal to *" , "Fahrenheit:", fahrenheit )
-
+print('The avg temperature range for this month in Washington, DC is:')
+print('\t', 'Low:', str(low) + 'C','\t', 'High:', str(high) + 'C')
 
 
 # Input is different in Python 2 and Python 3
