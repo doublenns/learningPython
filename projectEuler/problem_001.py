@@ -41,6 +41,14 @@ Potential optimizations:
 # The result is stored as a single set, which is then passed to the sum function to
 # add all the items together and return the result.
 
+# Square brackets creates lists. Curly brackets create dictionaries or sets.
+# A set is a data structure of it's own, containing unordered collections of
+# unique elements (no duplicates). Set objects support mathematical operations like 
+# union, intersection, difference, and symmetric difference.
+
+# Note: to create an empty set you have to use set(), not {}; the latter creates 
+# an empty dictionary
+
 values = set(range(3,1000,3)) | set(range(5,1000,5))
 print('The sum of all multiple of 3 or 5 below 1000 is:', sum(values))
 # Changed the sum variable in the 1st solution so wouldn't shadow the sum function.
