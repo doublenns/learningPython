@@ -38,8 +38,8 @@ Potential optimizations:
 # for loop. 
 
 # The values var stores the union of the two sets of 3 and 5 factors from 0-999.
-# The result is stored as a list, which is then passed to the sum function, which
-# adds all the items in the list together and returns the result.
+# The result is stored as a single set, which is then passed to the sum function to
+# add all the items together and return the result.
 
 values = set(range(3,1000,3)) | set(range(5,1000,5))
 print('The sum of all multiple of 3 or 5 below 1000 is:', sum(values))
