@@ -11,6 +11,7 @@ Todo:
     * Split the lines by \n but store in single var
     * Print the new var -- should be a list
     * Iterate through the list and print the lines 'normally'
+    * Iterate thru the list and join results back into single string
 '''
 
 import sys
