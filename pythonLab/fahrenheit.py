@@ -19,7 +19,7 @@ except NameError:
 
 
 import datetime, calendar
-# math imported here to help round decimals, but not implemented yet
+# math imported here to help round decimals
 import math
 
 
