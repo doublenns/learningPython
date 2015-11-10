@@ -27,7 +27,7 @@ Potential optimizations:
         and start the sum at 23 instead of 0.
     * Iterate less. (990 / 3) = 330. (990 / 5) = 198. (330 + 198) = 528.
         Only iterating thru multiple of 3 and 5 could cut down iterations by almost
-        half.
+        half. **Implemented in solution2**
             ~ Would have to discard sums of items that multiple of both 3 and 5
     * Math based operation to add factors more efficiently.
 '''
