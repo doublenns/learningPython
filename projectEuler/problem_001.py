@@ -6,7 +6,7 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 multiples of 3 or 5 below 1000.
 '''
 
-### Solution 1 ####
+#### Solution 1 ####
 # Solution simply brute force iterates thru every single int. If the iteration 
 # is either a multiple of 3 of 5, it adds them to the running tally & prints 
 # the sum when iteration is complete.
@@ -33,7 +33,7 @@ Potential optimizations:
 '''
 
 
-### Solution 2 ####
+#### Solution 2 ####
 # Another shorter solution which iterates less and avoids using a
 # for loop. 
 
