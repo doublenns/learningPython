@@ -10,7 +10,7 @@ def generate_fizz_buzz(limit):
     i = 0
     while i < limit:
         if not (i % 3) and not (i % 5):
-            yield "FizzBuzz"
+            yield(i,"FizzBuzz")
         elif (i % 3) == 0:
             yield "Fizz"
         elif not (i % 5):
@@ -25,3 +25,5 @@ for output in fizzbuzzer:
     print(output)
 
 # Generators help avoid stack overflow by minimizing memory usage
+# or to limit memory use in general, i.e. if have a 100 gb file that
+# needs to be parsed on a server w/ 1 gb of RAM.
