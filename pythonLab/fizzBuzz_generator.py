@@ -5,16 +5,15 @@
 # multiples of 3, and "buzz" for multiples of 5
 
 
-
 def generate_fizz_buzz(limit):
-    i = 0
-    while i < limit:
+    i = 1
+    while i <= limit:
         if not (i % 3) and not (i % 5):
             yield(i,"FizzBuzz")
         elif (i % 3) == 0:
-            yield "Fizz"
+            yield i, "Fizz"
         elif not (i % 5):
-            yield  "Buzz"
+            yield  i, "Buzz"
         else:
             yield i
 
@@ -23,6 +22,7 @@ def generate_fizz_buzz(limit):
 fizzbuzzer = generate_fizz_buzz(100)
 for output in fizzbuzzer:
     print(output)
+
 
 # Generators help avoid stack overflow by minimizing memory usage
 # or to limit memory use in general, i.e. if have a 100 gb file that
