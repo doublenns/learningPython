@@ -16,5 +16,5 @@ for i in range(1, 101):
         print(i)
 
 
-#values = set(range(3,101,3)) | set(range(5,101,5))
-#print(values)
+# values = set(range(3,101,3)) | set(range(5,101,5))
+# print(values)
