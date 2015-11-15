@@ -21,6 +21,5 @@ def print_fizz_buzz(i, limit):
 print_fizz_buzz(1, 100)
 
 
-
 # Python's max loop bound is about 1000 by default, otherwise
 # overflows the stack and bails.
