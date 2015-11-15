@@ -18,7 +18,8 @@ except NameError:
     pass
 
 
-import datetime, calendar
+import datetime
+import calendar
 # math imported here to help round decimals
 import math
 
@@ -41,7 +42,8 @@ temperature_ranges = {
 }
 
 
-# Function that rounds only to most significant digit. Wasn't useful in this program.
+# Function that rounds only to most significant digit
+# Wasn't useful in this program.
 def round_to_1(x):
     return round(x, -int(math.floor(math.log10(abs(x)))))
 
@@ -50,14 +52,17 @@ def round_to_1(x):
 while True:
     input_temp = input("What is the temperature in Fahrenheit? ")
     try:
-       val = float(input_temp)
-       print(); break
+        val = float(input_temp)
+        print()
+        break
     except ValueError:
-       print("*Please enter the temperature in numeric characters only.\n")
+        print("*Please enter the temperature in numeric characters only.\n")
 
-# Old Method: doesn't work on negatives or decimals since '-' and '.' aren't digits
+# Old Method: doesn't work on negatives or decimals since '-' and '.'
+# aren't digits.
 # Note: could also use 'isdigits' instead of 'isdecimal' (I believe)
-#while True:
+
+# while True:
 #    input_temp = input("What is the temperature in Fahrenheit? ")
 #    if input_temp.isdecimal():
 #        print(); break # Print an empty line and then break out of loop
@@ -65,20 +70,21 @@ while True:
 #        print("Please enter the temperature in numeric characters only.\n")
 
 
-
-
-
 fahrenheit = input_temp
 celsius = ((float(fahrenheit) - 32) / 1.8)
 
 # Use format to round Celsius to 2 decimal places and print the degree sign.
-output_template =  "Fahrenheit: {FH}{DS} * is equal to * Celsius: {CL:.2f}{DS}"
-output = output_template.format(FH=fahrenheit, CL=celsius, DS=u'\N{DEGREE SIGN}')
-# Can only put a placeholder inside of a string; is a placeholder for a variable
-print(output,'\n')
+output_template = "Fahrenheit: {FH}{DS} * is equal to * Celsius: {CL:.2f}{DS}"
+output = output_template.format(
+    FH=fahrenheit, CL=celsius, DS=u'\N{DEGREE SIGN}'
+)
+# Can only put a placeholder inside of a string;
+# is a placeholder for a variable
+print(output, '\n')
 
 # Using round function to round Celsius to 2 deciml places
-# print("\nCelcius:", round(celsius, 2), "* is equal to *" , "Fahrenheit:", fahrenheit )
+# print("\nCelcius:", round(celsius, 2),
+#    "* is equal to *", "Fahrenheit:", fahrenheit )
 
 
 # A way of parsing the numeric month from datetime.now, which could be useful
@@ -109,10 +115,11 @@ else:
 
 
 print('The avg temperature range for this month in Washington, DC is:')
-print('\t', 'Low:', str(low) + 'C','\t', 'High:', str(high) + 'C')
+print('\t', 'Low:', str(low) + 'C', '\t', 'High:', str(high) + 'C')
 
 
-# Input is different in Python 2 and Python 3
-    # In Python 2, accepts input as a program and tries to execute it
-# Division is different in Python 2 and Python 3
-    # In Python 2, division truncates by default (e.g. Int division)
+# Input is different in Python 2 and Python 3:
+# in Python 2, accepts input as a program and tries to execute it
+
+# Division is different in Python 2 and Python 3:
+# in Python 2, division truncates by default (e.g. Int division)
