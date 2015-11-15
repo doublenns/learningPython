@@ -9,11 +9,11 @@ def generate_fizz_buzz(limit):
     i = 1
     while i <= limit:
         if not (i % 3) and not (i % 5):
-            yield(i,"FizzBuzz")
+            yield(i, "FizzBuzz")
         elif (i % 3) == 0:
             yield i, "Fizz"
         elif not (i % 5):
-            yield  i, "Buzz"
+            yield i, "Buzz"
         else:
             yield i
 
