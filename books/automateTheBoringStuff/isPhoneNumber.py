@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def isPhoneNumber(text):
     if len(text) != 12:
         return False
@@ -25,7 +26,7 @@ def isPhoneNumber(text):
     return True
 
 
-print('415-555-4242 is a phone number:')
+print('415-555-4242 is a phone number: ', end='')
 print(isPhoneNumber('415-555-4242'))
-print('Moshi Moshi is a phone number:')
+print('Moshi Moshi is a phone number:', end=' ')
 print(isPhoneNumber('Moshi Moshi'))
