@@ -39,6 +39,7 @@ def getNumber(number):
 
 def getNumberRange(first, last):
     if (last < first):
+    """This method should return list of values"""
         step = -1
     else:
         step = 1
