@@ -14,11 +14,15 @@ Note: If the array is null or empty you should return empty array ([]).
 The returned array should be in LOWER case.
 '''
 
-
-bag = ["rottenApple", "rottenBanana", "Catelope", "rottenPineapple", "Kiwi"]
+bag = []
+bag2 = ["rottenApple", "rottenBanana", "Catelope", "rottenPineapple", "Kiwi"]
 
 
 def remove_rotten(bag_of_fruits):
+    # Checks to see if input is empty. If it is, returns empty list
+    if not bag_of_fruits:
+        return []
+
     for i in range(len(bag_of_fruits)):
         if "rotten" in bag_of_fruits[i]:
             bag_of_fruits[i] = bag_of_fruits[i][6:]
