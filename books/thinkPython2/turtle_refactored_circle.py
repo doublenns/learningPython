@@ -25,7 +25,7 @@ def circle(t, r):
 
 bob = turtle.Turtle()
 try:
-    r=int(sys.argv[1])
+    r = int(sys.argv[1])
 except Exception:
     print("Please supply the script w/ a radius as an int")
     sys.exit()
