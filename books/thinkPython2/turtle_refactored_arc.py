@@ -19,11 +19,13 @@ def arc(t, r, angle):
     polyline(t, n, step_length, step_angle)
 
 
-bob = turtle.Turtle()
 try:
-    arc(bob, r=int(sys.argv[1]), angle=int(sys.argv[2]))
+    r = int(sys.argv[1])
+    angle = int(sys.argv[2])
 except Exception:
     print("You didn't enter all the required parameters to run the script")
     sys.exit()
 
+bob = turtle.Turtle()
+arc(bob, r, angle)
 turtle.mainloop()
