@@ -15,7 +15,9 @@ is_odd(-7.0)--> true
 is_odd(4.23)--> false
 '''
 
+
 # Original Solution
+# Attempt at creating a return statement that read like English
 def is_odd(n):
     whole = float(n).is_integer()
     odd = n % 2
@@ -23,6 +25,7 @@ def is_odd(n):
 
 
 # Simplest, shortest solution
+# If n wasn't a whole number, the remainder wouldn't be a whole number either
 def is_odd(n):
     return n % 2 == 1
 
@@ -34,4 +37,4 @@ def is_odd(n):
 
 # Another way to write "if.. else expression"
 def is_odd(n):
-   return [False,True][n % 2 == 1]
+    return [False, True][n % 2 == 1]
