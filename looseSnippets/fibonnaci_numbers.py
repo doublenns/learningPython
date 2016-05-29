@@ -11,5 +11,5 @@ To-do:
 # Uses multiple assignment
 a, b = 0, 1
 while b < 35:
-	print(b)
-	a, b = b, a + b
+    print(b)
+    a, b = b, a + b
