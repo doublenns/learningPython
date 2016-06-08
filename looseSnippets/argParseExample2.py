@@ -19,7 +19,7 @@ def setup_args(argv=None):
         "solaris", "sunos", "s"]
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-n", "--name",
+    parser.add_argument("-n", "--name", required = True,
         help = "Input a string for the script to use as name.")
     parser.add_argument("-o", "--os", type = str.lower, choices=oses,
         help = "Give the script an OS.")
