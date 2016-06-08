@@ -4,7 +4,6 @@
 '''
 
 import argparse
-import sys
 
 
 def setup_args(argv=None):
