@@ -3,8 +3,13 @@
 import subprocess
 
 def run_shell_cmd(cmd, *shell):
-    process = subprocess.Popen(cmd.split(),
-            stdout=subprocess.PIPE)
+    # Might want to use a "try" or call.check in case Command fails
+    if "shell" in shell:
+        process = subprocess.Popen(cmd,
+                stdout=subprocess.PIPE, shell=True)
+    else:
+        process = subprocess.Popen(cmd.split(),
+                stdout=subprocess.PIPE)
     output = process.communicate()[0]
     rc = process.returncode
     return output, rc
