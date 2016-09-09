@@ -48,5 +48,16 @@ results = Table("results", meta,
                 Column("result", String)
                )
 
-# Create teh above tables
+# Create the above tables
 meta.create_all(con)
+
+# Print the tables that were just created
+for table in meta.tables:
+    print table
+# meta.tables in an immutabledict that has mapping of table names to
+# corresponding Table objects.
+# Can get the sqlalchemy.schema.Table object on which can perform inserts by
+# `table = meta.tables["table_name"]` for some table_name
+
+
+
