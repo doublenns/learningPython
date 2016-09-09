@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
 import sqlalchemy
+from sqlalchemy import Table
+from sqlalchemy import Column
+from sqlalchemy import Integer
+from sqlalchemy import String
+from sqlalchemy import ForeignKey
+
 
 # Database = tennis; User = federer; Password = grandestslam
 # Postgres installed on Vagrant box, w/ PSQL port 5432 forwarded -> local 5432
@@ -29,3 +35,18 @@ con, meta = connect("federer", "grandestslam", "tennis")
 
 print con
 print meta
+
+
+slams = Table("slams", meta,
+              Column("name", String, primary_key=True),
+              Column("country", String)
+             )
+
+results = Table("results", meta,
+                Column("slam", String, ForeignKey("slams.name")),
+                Column("year", Integer),
+                Column("result", String)
+               )
+
+# Create teh above tables
+meta.create_all(con)
