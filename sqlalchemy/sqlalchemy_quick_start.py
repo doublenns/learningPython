@@ -60,4 +60,11 @@ for table in meta.tables:
 # `table = meta.tables["table_name"]` for some table_name
 
 
+# Insert entry
+clause = slams.insert().values(name="Wimbledon", country="United Kingdom")
+con.execute(clause)
 
+# Insert entry and print primary key
+clause = slams.insert().values(name="Roland Garros", country="France")
+result = con.execute(clause)
+print result.inserted_primary_key
