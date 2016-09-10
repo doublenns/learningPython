@@ -68,3 +68,14 @@ con.execute(clause)
 clause = slams.insert().values(name="Roland Garros", country="France")
 result = con.execute(clause)
 print result.inserted_primary_key
+
+# When have lots of records to insert, instead pass list of values directly
+# to the `execute` function.
+
+victories = [
+    {'slam': "Wimbledon", "year": 2003, "result": "W"},
+    {"slam": "Wimbledon", "year": 2004, "result": "W"},
+    {"slam": "Wimbledon", "year": 2005, "result": "W"}
+]
+
+con.execute(meta.tables["results"].insert(), victories)
