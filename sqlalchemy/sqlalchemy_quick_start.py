@@ -75,7 +75,8 @@ print result.inserted_primary_key
 victories = [
     {'slam': "Wimbledon", "year": 2003, "result": "W"},
     {"slam": "Wimbledon", "year": 2004, "result": "W"},
-    {"slam": "Wimbledon", "year": 2005, "result": "W"}
+    {"slam": "Wimbledon", "year": 2005, "result": "W"},
+    {"slam": "Roland Garros", "year": 2005, "result": "L"}
 ]
 con.execute(meta.tables["results"].insert(), victories)
 
@@ -86,3 +87,13 @@ results = meta.tables["results"]
 print results.c
 for col in results.c:
     print col
+
+# Printing all rows in table
+for row in con.execute(results.select()):
+    print row
+
+
+print "\n\n"
+clause = results.select().where(results.c.year == 2005)
+for row in con.execute(clause):
+    print row
