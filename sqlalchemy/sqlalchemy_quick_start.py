@@ -77,5 +77,12 @@ victories = [
     {"slam": "Wimbledon", "year": 2004, "result": "W"},
     {"slam": "Wimbledon", "year": 2005, "result": "W"}
 ]
-
 con.execute(meta.tables["results"].insert(), victories)
+
+
+# To access all columns of table, iterate through the `table_name.c` object.
+# It's an object of sqllchemy.sql.base.ImmutableColumnCollection
+results = meta.tables["results"]
+print results.c
+for col in results.c:
+    print col
