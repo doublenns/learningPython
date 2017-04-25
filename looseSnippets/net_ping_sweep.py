@@ -3,12 +3,14 @@
 import ipaddress
 import subprocess
 import argparse
+import socket
 
 
 # To-DO:
 #   Concurrency - create queue and add threads 
 #   How to handle /32 "network"
 #   DNS Lookup Hosts and write hostnames
+#       socket.gethostbyaddr()
 #   ?Hook into Database? - Save results (Different script?)
 #   ?Another way to determine hostnames other than DNS?
 #   ?Different imlementation of ping other than system call?
