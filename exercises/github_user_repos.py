@@ -29,7 +29,7 @@ def main():
     if args.user:
         user = args.user
     else:
-        user = input("Which user do you want to look for?: ")
+        user = str(input("Which user do you want to look for?: "))
     user_url = "https://api.github.com/users/{}".format(user)
     repos_url = "https://api.github.com/users/{}/repos".format(user)
 
@@ -37,7 +37,7 @@ def main():
     if not user_r.ok:
         print("Unable to find that user. Error code", r_user.status_code)
         sys.exit()
-    repos_r = requests.get(user_url)
+    repos_r = requests.get(repos_url)
     user_parsed = user_r.json()
     repos_parsed = repos_r.json()
 
@@ -49,7 +49,9 @@ def main():
     print("{} joined GitHub on {}.".format(user, join_date))
     print("They are following {} users and has {} followers.".format(following, followers))
     print("They have {} public repos.".format(public_repos))
-
+    print("The names of their repos are:")
+    for repo in repos_parsed:
+        print("    " + repo["name"])
 
 
 if __name__ == "__main__":
