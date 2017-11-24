@@ -5,8 +5,9 @@ Exercise in interacting w/ ReST APIs
 '''
 
 import argparse             # Accept and use input parameters to script
-import requests             # Interact w/ API using HTTP
 import sys                  # Exit script
+
+import requests             # Interact w/ API using HTTP
 
 
 def setup_args():
@@ -23,8 +24,8 @@ def main():
     '''
     Script's main function
     '''
-    p = setup_args()
-    args = p.parse_args()
+    params = setup_args()
+    args = params.parse_args()
 
     if args.user:
         user = args.user
