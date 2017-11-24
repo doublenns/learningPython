@@ -6,8 +6,8 @@ Exercise in interacting w/ ReST APIs
 
 import argparse             # Accept and use input parameters to script
 import requests             # Interact w/ API using HTTP
-import json                 # Format API into a JSON object
 import sys                  # Exit script
+
 
 def setup_args():
     '''
@@ -35,12 +35,11 @@ def main():
 
     user_r = requests.get(user_url)
     if not user_r.ok:
-        print("Unable to find that user. Error code", r_user.status_code)
+        print("Unable to find that user. Error code", user_r.status_code)
         sys.exit()
     repos_r = requests.get(repos_url)
     user_parsed = user_r.json()
     repos_parsed = repos_r.json()
-
 
     join_date = user_parsed["created_at"]
     public_repos = user_parsed["public_repos"]
@@ -51,7 +50,7 @@ def main():
     print("They have {} public repos.".format(public_repos))
     print("The names of their repos are:")
     for repo in repos_parsed:
-        print("    " + repo["name"])
+        print("\t{}".format(repo["name"]))
 
 
 if __name__ == "__main__":
