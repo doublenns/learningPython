@@ -22,7 +22,7 @@ print(f"For loop: {loop_doubled}")
 '''
 Rather than creating an empty list and adding each element to the end,
 simply define the list and it's contents at the same time using the format:
-`new_list = [expression for member in iterable]`
+`new_list = [expression for member in iterable (if conditional)]`
 
 "iterable" - a list, set, sequence, generator, or any other object that
 returns its elements one at a time.
