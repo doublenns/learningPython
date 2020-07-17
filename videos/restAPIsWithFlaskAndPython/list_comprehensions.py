@@ -48,3 +48,15 @@ print(f"For loop: {loop_starts_with_t}")
 # List Comprehension
 lc_starts_with_t = [friend for friend in friends if friend.startswith("T")]
 print(f"List Comprehension: {loop_starts_with_t}")
+
+
+# If need a more complex conditional filter, can move the conditional logic
+# to a separate function - https://realpython.com/list-comprehension-python/
+sentence = 'The rocket, who was named Ted, came back \
+    from Mars because he missed his friends.'
+
+def is_consonant(letter):
+    vowels = 'aeiou'
+    return letter.isalpha() and letter.lower() not in vowels
+
+consonants = [i for i in sentence if is_consonant(i)]
