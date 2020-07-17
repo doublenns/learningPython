@@ -11,7 +11,7 @@ import requests             # Interact w/ API using HTTP
 
 def setup_args():
     '''
-    Funtion builds parsing object to pass to main function.
+    Function builds parsing object to pass to main function.
     '''
     parser = argparse.ArgumentParser()
     parser.add_argument("-u", "--user", type=str.lower, default=None,
