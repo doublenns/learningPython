@@ -6,7 +6,6 @@ Exercise in interacting w/ ReST APIs
 
 import argparse             # Accept and use input parameters to script
 import sys                  # Exit script
-
 import requests             # Interact w/ API using HTTP
 
 
