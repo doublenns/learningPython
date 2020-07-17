@@ -21,8 +21,9 @@ print(f"For loop: {loop_doubled}")
 # List comprehension that does the same thing
 '''
 Rather than creating an empty list and adding each element to the end,
-simply define the list and it's contents at the same time using the format:
+simply define the list and it's contents at the same time using the formats:
 `new_list = [expression for member in iterable (if conditional)]`
+`new_list = [expression (if conditional) for member in iterable]`
 
 "iterable" - a list, set, sequence, generator, or any other object that
 returns its elements one at a time.
@@ -60,3 +61,16 @@ def is_consonant(letter):
     return letter.isalpha() and letter.lower() not in vowels
 
 consonants = [i for i in sentence if is_consonant(i)]
+
+
+# If want to change a member value instead of filtering it out, useful to
+# place the conditional near the beginning of the expression.
+original_prices = [1.25, -9.45, 10.22, 3.78, -5.92, 1.16]
+prices = [i if i > 0 else 0 for i in original_prices]
+print(f"List comprehension with element modification: {prices}")
+
+# Above is the same as below:
+def get_price(price):
+    return price if price > 0 else 0
+prices = [get_price(i) for i in original_prices]
+print(f"List comprehension with element modification: {prices}")
