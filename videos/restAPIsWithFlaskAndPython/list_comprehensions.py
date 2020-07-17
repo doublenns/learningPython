@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+'''
+List comprehensions are often described as being more "Pythonic" than
+loops or map().
+Main benefit of using a list comprehension in Python is that it's a single tool
+that can use in many different situations. In addition to standard list creation,
+list comprehensions can also be used for mapping and filtering; don't have to use
+a different approach for each scenario.
+'''
+
+
 numbers = [1,2,3]
 
 # For Loop
@@ -9,6 +19,18 @@ for num in numbers:
 print(f"For loop: {loop_doubled}")
 
 # List comprehension that does the same thing
+'''
+Rather than creating an empty list and adding each element to the end,
+simply define the list and it's contents at the same time using the format:
+`new_list = [expression for member in iterable]`
+
+"iterable" - a list, set, sequence, generator, or any other object that
+returns its elements one at a time.
+
+Because the "expressions" requirement is so flexible, a list comprehension
+works well in many places where a map() might be used. Main distinction is
+that the list comprehension returns a list, not a map object.
+'''
 lc_doubled = [num * 2 for num in numbers]
 print(f"List comprehension: {lc_doubled}")
 
