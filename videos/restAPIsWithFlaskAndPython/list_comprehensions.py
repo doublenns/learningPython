@@ -48,11 +48,12 @@ print(f"For loop: {loop_starts_with_t}")
 
 # List Comprehension
 lc_starts_with_t = [friend for friend in friends if friend.startswith("T")]
-print(f"List Comprehension: {loop_starts_with_t}")
+print(f"List Comprehension: {lc_starts_with_t}")
 
 
 # If need a more complex conditional filter, can move the conditional logic
 # to a separate function - https://realpython.com/list-comprehension-python/
+# Below is the same as the above
 sentence = 'The rocket, who was named Ted, came back \
     from Mars because he missed his friends.'
 
@@ -74,3 +75,14 @@ def get_price(price):
     return price if price > 0 else 0
 prices = [get_price(i) for i in original_prices]
 print(f"List comprehension with element modification: {prices}")
+
+
+# Set Comprehensions are created using curly braces instead of square brackets
+quote = "life finds a way"
+unique_vowels = {i for i in quote if i in 'aeiou'}
+print(f"Set Comprehension: {unique_vowels}")
+
+
+# Dictionary Comprehensions have additional requirement of defining a key
+squares = {i: i * i for i in range(10)}
+print(f"Dictionary Comprehension: {squares}")
