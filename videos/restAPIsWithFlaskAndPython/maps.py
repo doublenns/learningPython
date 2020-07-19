@@ -31,10 +31,13 @@ map_final_prices = map(get_price_with_tax, transactions)
 print(list(map_final_prices))
 
 
-def doubled(x):
+# Example of a map with a lambda function
+def double(x):
     return x * 2
 
 sequence = [1, 3, 5, 9]
-doubled = map(doubled, sequence)
-print(sequence)
-print(list(doubled))
+doubled = map(double, sequence)
+lambda_doubled = map(lambda x: x*2, sequence)
+print(f"The sequence before being doubled: {sequence}")
+print(f"The sequence after being doubled using double() function: {list(doubled)}")
+print(f"The sequence after being doubled using a lambda function: {list(lambda_doubled)}")
