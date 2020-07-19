@@ -29,3 +29,12 @@ into a list using 'list()'.
 '''
 map_final_prices = map(get_price_with_tax, transactions)
 print(list(map_final_prices))
+
+
+def doubled(x):
+    return x * 2
+
+sequence = [1, 3, 5, 9]
+doubled = map(doubled, sequence)
+print(sequence)
+print(list(doubled))
