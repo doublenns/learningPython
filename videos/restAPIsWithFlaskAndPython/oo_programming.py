@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Example of class inheritance
 class Device():
     def __init__(self, name, connected_by):
         self.name = name
@@ -14,7 +15,6 @@ class Device():
         print("Disconnected.")
 
 
-# Example of class inheritance
 class Printer(Device):
     def __init__(self, name, connected_by, capacity):
         super().__init__(name, connected_by)
